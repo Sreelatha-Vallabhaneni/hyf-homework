@@ -1,0 +1,148 @@
+/*Style the complete web page using html and body elements*/
+html,body {
+    margin: 0;
+    font-family: 'Taviraj', serif;
+    color: midnightblue;
+    background-image: url(https://www.ilovewallpaper.ie/images/geo-starburst-glitter-wallpaper-silver-grey-fd40934-p2889-6910_image.jpg);
+}
+/* Style the Header part */
+.cv-title {   
+   height:50%;
+   padding: 2% 0;
+   margin: 5% 10% 0;
+   font-family: 'Basic', sans-serif;  
+}
+/* Style the container class which containes about, education, work, 
+learning strategies, HYF info sections*/
+.container{
+    width: 59%;    
+    height:50%; 
+    margin:1% 0 0 10%;
+    padding: 2%;
+    font-size: 18px; 
+}
+/* Style about article */
+.about {
+    padding:10px 15px;;
+    margin:8px 15px;
+}
+.about h2 {    
+    font-family: 'Courgette', cursive;
+}
+/* Style education */
+.education {
+    float: left;
+    margin:0 0 0 28px;
+}
+/* Style verticle line and circle section */
+.line-dot {   
+    margin:17px 0 0 38px; 
+}
+.vertical-line {    
+    width: 2px;
+    height: 65px;
+    background-color: midnightblue;
+    margin: auto auto 0 auto;    
+}
+.dot {    
+    width: 15px;
+    height: 15px;
+    background: -webkit-radial-gradient(#cce012 , #99024ed5 55%);    
+    border-radius: 100px;   
+}
+/* Style Work experience */
+.work-experience {
+    float:right;
+    margin-right:60px;    
+}
+/* Style learning strategies and HYF information*/
+.resources-hyf-links {
+    margin:12px 0 0 20px;
+}
+.resources-hyf-links h2 {
+    margin-left:20px;
+}
+.resources {    
+    width:45%;  
+}
+.hyf-links {
+    margin:0 8px 0 50px;
+    padding-left:25px;    
+    width:45%;
+}
+.hyf-links h2 {
+    font-size: 24px;
+}
+.resources li, .hyf-links li, .about p {
+    line-height: 1.8em;
+}
+/* Style aside part */
+.second-column{
+    width: 20%;  
+    float: right;
+    margin: 1% 10% 0 0;
+    padding: 2% 1%;
+}
+.profile-image{
+    border-radius: 50%;
+    margin:25px 0;
+}
+.contact {
+    font-size: 18px;
+}
+.social-contact {
+    word-spacing: 20px;
+    margin:37px 0;
+    padding: 12px 2px;
+    font-size: 20px; 
+}
+.social-contact :hover, .contact :hover {
+    color: crimson;
+}
+/* common properties in all elements*/
+.cv-title, .container, .second-column, .copyright, .resources, .hyf-links {
+    background: -webkit-radial-gradient(#34f3e3 , #c8ececd5 55%);
+    box-shadow:10px 15px 9px #888888;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+.cv-title, .about h2, .second-column, .copyright {
+    text-align: center;
+}
+.container, .work-experience p, .education p, .resources-hyf-links {
+    text-align: justify;
+}
+.container, .line-dot, .resources, .hyf-links {
+    display: inline-block;
+}
+.work-experience p, .education p {    
+    word-spacing: 6.5px;    
+}
+/* Style footer */
+.copyright {
+    width:80%;
+    padding:2%;
+    margin-left: 10%;
+}
+/*Media Query for responsive design */
+@media screen and (min-width:100px) and (max-width:1239px) {
+    .container {
+        display: block;
+        width:80%;
+    }
+    .resources, .hyf-links {
+        width:100%;
+    }
+    .hyf-links {
+        margin-left: auto;
+    }
+    .second-column {
+        width: 80%;
+    }
+    .copyright {
+        position: absolute;
+        margin-top:57rem;
+        width: 80%;
+    }
+}
+
