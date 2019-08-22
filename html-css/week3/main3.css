@@ -1,0 +1,191 @@
+body{
+    margin: 60px;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    caret-color: red;
+    background-color: aquamarine;
+    color:rgb(15, 14, 85);
+}
+/* style header part */
+header{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: aquamarine;
+}  
+/* Style logo */
+img{
+    width:100px;
+    border-radius: 15%;
+}
+/* style navigation */
+nav{
+    border: 2px solid gray;
+    background-color: lightgray;
+    width: 30%;
+    text-align: center;
+    align-self: center;
+}
+/* Style main part */
+main{
+    background-color: aquamarine;
+}
+h1{
+    font-size: 2rem;
+    
+}
+.signup-content{
+    width: 60%;
+    font-size: 17px;
+    line-height: 1.7em;
+}
+/**************** Style and Animate Progress bar ******************/ 
+.progress{
+    display: flex;
+    margin: 50px 0 50px 80px;
+        
+}
+.dot, .dot2{
+    width:55px;
+    color: blue;
+    height: 40px;
+    border: 10px solid;
+    align-self: center;
+    text-align: center;
+    padding-top: 15px;
+    border-radius: 50%; 
+    border-color: cyan red yellow rgb(59, 26, 245);               
+}
+.dot{
+    -webkit-animation: rotate-borders .5s infinite;
+}
+@-webkit-keyframes rotate-borders {
+  25% { border-color: rgb(59, 26, 245) cyan red yellow; }
+  50% { border-color: yellow rgb(59, 26, 245) cyan red; }
+  75% { border-color: red yellow rgb(59, 26, 245) cyan; }
+  100% { border-color: cyan red yellow rgb(59, 26, 245);}
+}
+.line{
+    align-self: center;
+    width: 22%;
+    color: blue;
+    line-height: 15px;
+    border-radius: 5%;
+    
+    text-align: center;
+    background-color: rgb(60, 253, 69);    
+}
+.dot1{
+    width:55px;
+    height: 40px;
+    border: 10px solid lightgray;
+    align-self: center;
+    text-align: center;
+    padding-top: 15px;
+    border-radius: 50%; 
+}
+.line1{
+    align-self: center;
+    width: 22%;
+    height: 15px;
+    border-radius: 5%;    
+    background-color: lightgray;
+}
+/*********************** Style the content in forms ***********************/
+span{
+    color: red;
+    font-size: 20px;
+}
+.container{                                       /* step1 step2 form styling */ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    line-height: 2em;
+}
+.container1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.profile-des{
+    display: flex;
+    margin: 20px 0;
+    width: 70%;
+}
+button{
+    float: right;
+    width:20%;
+    padding: 1.4%;
+    margin-top:3%; 
+    font-size: 18px;
+}
+/************* style checkbox hack **************/
+input[type=checkbox]:checked ~ .control{
+    display: none;
+}
+fieldset{
+    margin: 5% 0; 
+    padding: 4% 6% 3% 1%;   
+}
+/*---------********------ style tabs -------*******------- */
+.tabs {
+    position: relative;
+    min-height: 1300px; /* This part sucks */
+    clear: both;    
+    margin: 5% 0;    
+}
+.tab {
+  display: inline-block;  
+  margin: 0 8%;  
+  
+}
+.tab .tab-label {
+    color: blue;
+    background: lightpink !important; 
+    position: relative;
+    left: 1px;     
+    padding: 12px;
+    border-radius: 20%;
+    cursor: pointer;    
+    box-shadow: 0 0 5px #333;        
+}
+.tab-label:hover{
+    color: blanchedalmond;
+    background-color: rgb(195, 152, 236) !important;
+}
+.tab .tab-radio {
+    display: none;   
+}
+.content {
+    position: absolute;
+    top: 28px;
+    left: 0;
+    background-color: blanchedalmond;  
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    border: 1px solid #ccc; 
+    margin-top: 20px;
+}
+.tab-radio:checked ~ label {
+    z-index: 2; 
+}
+.tab-radio:checked ~ label ~ .content {
+    z-index: 1;
+}
+/*************** Media querries ******************/
+@media screen and (min-width:100px) and (max-width:1239px){
+    .content{
+        margin-top: 55px;
+    }
+    .tab{
+        display: inline-block;
+        margin: 0 10px 32px 60px;        
+    }
+    .progress{
+        margin: 0;
+    }
+    .content{
+        min-height: auto;
+    }
+}
