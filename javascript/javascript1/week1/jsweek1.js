@@ -35,6 +35,15 @@ const secondWords = ["User", "Developer", "Talent", "Stages", "View", "Possible"
 const randomNumber1 = Math.floor(Math.random() * firstWords.length);
 const randomNumber2 = Math.floor(Math.random() * secondWords.length);
 const startupName = firstWords[randomNumber1] + " " + secondWords[randomNumber2];
-const uniqueStartupNames = firstWords.length * secondWords.length; // Extra thought experiment
 console.log(`The startup: ${startupName} contains ${startupName.length} characters`);
+const uniqueStartupNames = firstWords.length * secondWords.length; // Extra thought experiment
 console.log(`Total unique startupnames: ${uniqueStartupNames}`); //output is 100
+for (let i = 0; i < firstWords.length; i++) {
+        for (let j = 0; j < secondWords.length; j++) {
+            const startupName = firstWords[i] + " " + secondWords[j];
+            console.log(startupName);
+        }
+    }
+
+
+
