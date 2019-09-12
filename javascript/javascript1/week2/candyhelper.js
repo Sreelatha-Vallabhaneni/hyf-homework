@@ -21,23 +21,18 @@ addCandy('chewing-gum', 20);
 console.log(boughtCandyPrices);
 
 //************ Can i buy more? ***************
-function canBuyMoreCandy(moreCandies) {
+function canBuyMoreCandy(boughtCandyPrices) {
     const amountToSpend = Math.random() * 100;
-    let totalPrice = 0;
-    for (let i = 0; i < moreCandies.length; i++) {
-        totalPrice += moreCandies[i];
-    }
     console.log(`Amount to spend ${amountToSpend}`);
+    let totalPrice = 0;
+    for (let i = 0; i < boughtCandyPrices.length ; i++) {
+        totalPrice += boughtCandyPrices[i];
+    }    
     console.log(`Total price ${totalPrice}`);
     if (totalPrice < amountToSpend) {
-        buyMoreCandy = true;
+        return 'You can buy more, so please do!';
     } else {
-        buyMoreCandy = false;
+        return 'Enough candy for you!';
     }
-    return buyMoreCandy;
 }
-if (canBuyMoreCandy(boughtCandyPrices)) {
-    console.log('You can buy more, so please do!');
-} else {
-    console.log('Enough candy for you!');
-}
+console.log(canBuyMoreCandy(boughtCandyPrices));
