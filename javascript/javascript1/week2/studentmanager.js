@@ -5,13 +5,13 @@ function addStudentToClass(studentName) {
     if (class07Students.lastIndexOf(studentName, 5) !== -1) {
         return `Student ${studentName} is already in the class.`;
     }
-    if (studentName === 'queen') {
+    else if (studentName === 'queen') {
         return class07Students.push(studentName);
     }
-    if (studentName === '' || typeof studentName !== 'string') {
+    else if (studentName === '' || typeof studentName !== 'string') {
         return 'please enter a student name in order to string not a number'
     }
-    if (class07Students.length > 5) {
+    else if (class07Students.length > 5) {
         return 'Cannot add more students to class 07.';
     }
     return class07Students.push(studentName);
