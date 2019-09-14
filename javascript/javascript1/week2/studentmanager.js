@@ -2,13 +2,13 @@
 
 const class07Students = [];
 function addStudentToClass(studentName) {
-    if (class07Students.lastIndexOf(studentName, 5) !== -1) {
+    if (class07Students.lastIndexOf(studentName, class07Students.length) !== -1) {
         return `Student ${studentName} is already in the class.`;
     }
     else if (studentName === 'queen') {
         return class07Students.push(studentName);
     }
-    else if (studentName === '' || typeof studentName !== 'string') {
+    else if (studentName === '' ||  studentName === 'string') {
         return 'please enter a student name in order to string not a number'
     }
     else if (class07Students.length > 5) {
