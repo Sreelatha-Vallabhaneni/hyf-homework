@@ -108,3 +108,37 @@ console.log(getReply('Add Bike ride the 3/5-2019 to my calendar')); // BIKE RIDE
 console.log(getReply('Add HyF study group the 26/9-2019 to my calendar'));// HYF STUDY GROUP added to your calender.
 console.log(getReply('Add visit copenhagen the 28/9-2019 to my calendar'));// VISIT COPENHAGEN added to your calender
 console.log(getReply('what am i doing this week')); //This week you have 3 events.
+
+
+// from class work
+// fizz buzz  
+function fizzbuzz(fizz, buzz) {
+    const arr = new Array(100);
+    for (let i = 0; i < 100; i++) {
+        arr[i] = i + 1;
+    }
+    for (let i = 1; i < arr.length + 1; i++) {
+        if (i % fizz && i % buzz) {
+            console.log(i);
+        }
+        else {
+            if (i % fizz == 0) {
+                console.log('fizz');
+            }
+            if (i % buzz == 0) {
+                console.log('buzz');
+            }
+        }
+    }
+}
+fizzbuzz(4, 12);
+
+//Build a sentiment analyzer
+function getSentimentScore(text) {
+    text.toLowerCase().split(' ');
+
+}
+
+
+
+
