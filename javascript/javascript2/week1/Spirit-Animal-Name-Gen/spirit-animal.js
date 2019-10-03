@@ -68,6 +68,7 @@ option.textContent = 'Select Event';
 select.appendChild(option);
 const btnclick = document.createElement('option');// Create click option
 btnclick.textContent = 'click';
+btnclick.value = 'click';
 select.appendChild(btnclick);
 const hover = document.createElement('option');// create mouseover option
 hover.value = 'mouseover';
@@ -97,17 +98,23 @@ function spiritAnimalName (){
 select.addEventListener("change", function(){
     if (select.value === 'click') {
         button.hidden = false;
-        button.addEventListener('click', spiritAnimalName);
+        button.addEventListener('click', function () {
+            return spiritAnimalName();
+        })
+        nameInput.removeEventListener('mouseover', spiritAnimalName);
+        nameInput.removeEventListener('input', spiritAnimalName);
     }else if (select.value === 'mouseover') {
         button.hidden = true;
-        nameInput.addEventListener('mouseover', spiritAnimalName);        
+        nameInput.addEventListener('mouseover', spiritAnimalName);
+        button.removeEventListener('click', spiritAnimalName);
+        nameInput.removeEventListener('input', spiritAnimalName);        
     }else if (select.value === 'input') {
         button.hidden = true;
         nameInput.addEventListener('input', spiritAnimalName);
+        button.removeEventListener('click', spiritAnimalName);
+        nameInput.removeEventListener('mouseover', spiritAnimalName);
     } 
 })
-button.addEventListener("click", function() {
-     return spiritAnimalName(); 
-})
+
 
 
