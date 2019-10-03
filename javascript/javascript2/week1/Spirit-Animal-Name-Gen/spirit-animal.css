@@ -7,9 +7,10 @@ body{
 }
 h1{
     font-size: 60px;
-    background: -webkit-radial-gradient(rgb(23, 231, 23), yellow , rgb(126, 245, 245) 100%);
+    /*background: -webkit-radial-gradient(rgb(23, 231, 23), yellow , rgb(126, 245, 245) 100%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;  
+    -webkit-text-fill-color: transparent;*/
+    background-image: linear-gradient(to right, rgb(23, 231, 23),yellow , rgb(126, 245, 245) 100%); 
 }  
 .animal-images{
     display: inline-block;
@@ -26,19 +27,4 @@ p{
     font-size: 16px;
     margin: 5px 30px;
 }
-h1  {
-   position: relative;
-  -webkit-animation-name: mymove;  /* Chrome, Safari, Opera */
-  -webkit-animation-duration: 5s;  /* Chrome, Safari, Opera */
-  animation-name: mymove;
-  animation-duration: 5s;
-}
-/* Chrome, Safari, Opera */
-@-webkit-keyframes mymove {
-  from {top: 0px;}
-  to {top: 200px;}
-}
-@keyframes mymove {
-  from {top: 0px;}
-  to {top: 400px;}
-}
+
