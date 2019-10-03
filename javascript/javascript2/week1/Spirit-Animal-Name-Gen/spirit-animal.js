@@ -98,9 +98,7 @@ function spiritAnimalName (){
 select.addEventListener("change", function(){
     if (select.value === 'click') {
         button.hidden = false;
-        button.addEventListener('click', function () {
-            return spiritAnimalName();
-        })
+        button.addEventListener('click', spiritAnimalName);
         nameInput.removeEventListener('mouseover', spiritAnimalName);
         nameInput.removeEventListener('input', spiritAnimalName);
     }else if (select.value === 'mouseover') {
@@ -114,6 +112,9 @@ select.addEventListener("change", function(){
         button.removeEventListener('click', spiritAnimalName);
         nameInput.removeEventListener('mouseover', spiritAnimalName);
     } 
+})
+button.addEventListener('click', function () {
+    return spiritAnimalName();
 })
 
 
