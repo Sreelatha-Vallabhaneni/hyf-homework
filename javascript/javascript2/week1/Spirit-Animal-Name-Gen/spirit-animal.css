@@ -1,0 +1,44 @@
+body{
+    text-align: center;
+    background-color: crimson;
+    margin-top: 2%;
+    color: darkblue;
+    font-weight: bold;
+}
+h1{
+    font-size: 60px;
+    background: -webkit-radial-gradient(rgb(23, 231, 23), yellow , rgb(126, 245, 245) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+}  
+.animal-images{
+    display: inline-block;
+    width: 300px; 
+    margin: 2%;   
+}
+p{
+    font-size: 38px;
+}
+.button, .input, select{
+    font-weight: bold;
+    background-color: bisque;
+    color: darkblue;
+    font-size: 16px;
+    margin: 5px 30px;
+}
+h1  {
+   position: relative;
+  -webkit-animation-name: mymove;  /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 5s;  /* Chrome, Safari, Opera */
+  animation-name: mymove;
+  animation-duration: 5s;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+  from {top: 0px;}
+  to {top: 200px;}
+}
+@keyframes mymove {
+  from {top: 0px;}
+  to {top: 400px;}
+}
