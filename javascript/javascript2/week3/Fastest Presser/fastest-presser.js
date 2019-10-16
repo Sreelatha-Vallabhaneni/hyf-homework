@@ -51,8 +51,8 @@ const mainClick = clickButton.addEventListener("click", () => {
          var confettiSettings = { target: "confetti-holder" };
          var confetti = new ConfettiGenerator(confettiSettings);
          confetti.render();
-        console.log(document.querySelector(".won-s").textContent =
-          "Hurray! you won the game");
+        document.querySelector(".won-s").textContent =
+          "Hurray! you won the game";
           /*var confettiSettings = { target: "confetti-holder" };
           var confetti = new ConfettiGenerator(confettiSettings);
           confetti.render();*/
@@ -60,9 +60,8 @@ const mainClick = clickButton.addEventListener("click", () => {
         var confettiSettings = { target: "my-canvas" };
         var confetti = new ConfettiGenerator(confettiSettings);
         confetti.render();     
-        console.log(document.querySelector(".won-l").textContent =
-        `Hurray! you won the game`);
-        
+        document.querySelector(".won-l").textContent =
+        `Hurray! you won the game`;        
       } else if (PressSCount === lCount && selectInput) {
         let draw = document.querySelector(".draw");
         draw.textContent = "Game draw";
