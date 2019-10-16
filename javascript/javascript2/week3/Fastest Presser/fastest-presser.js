@@ -12,7 +12,7 @@ const mainClick = clickButton.addEventListener("click", () => {
   const selectInput = document.querySelector("input").value;
   pTagg.textContent = `${selectInput} Seconds Left`;
   if(selectInput > 0){
-    var audio = new Audio("music/Legend-Theme.mp3");// Unique feature on my interest.
+    var audio = new Audio("Legend-Theme.mp3");// Unique feature on my interest.
     audio.play();
   }  
 
