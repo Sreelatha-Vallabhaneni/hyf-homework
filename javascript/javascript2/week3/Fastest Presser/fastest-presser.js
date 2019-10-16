@@ -48,17 +48,20 @@ const mainClick = clickButton.addEventListener("click", () => {
 // 5.
   setTimeout(() => {
        if (PressSCount > lCount) {
-         var confettiSettings = { target: "confetti-holder" };
+         /*var confettiSettings = { target: "confetti-holder" };
          var confetti = new ConfettiGenerator(confettiSettings);
-         confetti.render();
+         confetti.render();*/
         document.querySelector(".won-s").textContent =
           "Hurray! you won the game";
-      } else if (lCount > PressSCount) {
+          var confettiSettings = { target: "confetti-holder" };
+          var confetti = new ConfettiGenerator(confettiSettings);
+          confetti.render();
+      } else if (lCount > PressSCount) {        
+        document.querySelector(".won-l").textContent =
+        `Hurray! you won the game`;
         var confettiSettings = { target: "my-canvas" };
         var confetti = new ConfettiGenerator(confettiSettings);
         confetti.render();
-        document.querySelector(".won-l").textContent =
-        `Hurray! you won the game`;
       } else if (PressSCount === lCount && selectInput) {
         let draw = document.querySelector(".draw");
         draw.textContent = "Game draw";
