@@ -49,7 +49,7 @@ const mainClick = clickButton.addEventListener("click", () => {
   setTimeout(() => {
        if (PressSCount > lCount) {
          var confettiSettings = { target: "confetti-holder" };
-         var confetti = new window.ConfettiGenerator(confettiSettings);
+         var confetti = new ConfettiGenerator(confettiSettings);
          confetti.render();
         document.querySelector(".won-s").textContent =
           "Hurray! you won the game";
