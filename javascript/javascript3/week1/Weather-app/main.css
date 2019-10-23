@@ -1,0 +1,71 @@
+html,
+body {
+  height: 100%;  
+  padding: 0;  
+  background-image: url(https://media.giphy.com/media/TxVVB6PfWMjE4/giphy.gif);
+}
+button{
+    cursor: pointer;
+    width: 10%;
+}
+input, button{
+    background-color: mediumslateblue;
+    
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    height: 30px;
+    margin-right: 8px ;
+    color:white;
+    font-weight: bold;
+    font-size: 15px;
+}
+::-webkit-input-placeholder{
+    color: white;
+}
+img{
+    width: 8rem;
+    height: 8rem;
+}
+nav{
+    margin: 30px 0 0 0;
+    text-align: center;
+}
+nav p{
+    color: white;
+    font-size: 30px;
+    background: rgba(0, 0, 0, 0.5);
+}
+section{
+    display: inline-block;   
+    margin: 20px 0px 50px 150px;
+    text-align: center;
+    font-size: 22px;
+    color:white;
+     width: 20%;
+     background: rgba(0, 0, 0, 0.5);  
+}
+#map {
+    float: right;
+    height: 70%;
+    width: 60%;
+    margin: 10px 20px 0 30px;
+    border-radius: 8px;
+}
+
+@media (max-width: 900px) and (min-width: 100px) {
+    body{
+        text-align: center;                
+    }
+    section{
+        margin: 0;
+    }
+    #map{
+        float: none;
+        width: 100%;
+        margin: 10px 0 0 0;
+    }
+    button{
+        margin-top: 10px;
+    }
+}
