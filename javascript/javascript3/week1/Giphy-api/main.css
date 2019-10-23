@@ -1,0 +1,33 @@
+body{
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    background-color: wheat;;
+}
+h1{
+    font-size: 50px;
+}
+img{
+   text-align: center;
+   /*width: 50%;
+   height: 50%;*/
+}
+button{
+    background-color: mediumspringgreen;
+    border: none;
+    height: 50px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 8px;
+    margin: -8px 0 6px 0;
+}
+input{
+    height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 8px;
+}
+h2, h1{
+    color: rgb(240, 89, 152);
+}
