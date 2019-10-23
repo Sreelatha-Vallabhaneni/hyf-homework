@@ -56,7 +56,7 @@ function renderWeatherDetails(json){
           text: `${Math.round(json.main.temp - 273.15) + "°C"}`
         }
       });
-      console.log(map, marker);      
+      console.log(map);      
     }    
     renderLocationOnGoogleMap(json.coord.lat, json.coord.lon);
     //Save my location optional - when enter city name and click button
