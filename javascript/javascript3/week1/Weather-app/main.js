@@ -40,7 +40,7 @@ function renderWeatherDetails(json){
     document.querySelector(".sunset").textContent = `Sunset: ${new Date(json.sys.sunset * 1000).toLocaleTimeString()}`;
     //Optional a map showing where the city is located
     function renderLocationOnGoogleMap(lat, lng) {
-      const mapDiv = document.querySelector("#map");
+      const mapDiv = document.getElementById('#map');
       const map = new google.maps.Map(mapDiv, {
         center: { lat, lng },
         zoom: 10.5
