@@ -51,8 +51,8 @@ function renderWeatherDetails(json) {
   mapDiv.innerHTML = `<iframe src="https://maps.google.com/maps?q=${json.name}&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>`;*/
   function renderLocationOnGoogleMap(lat, lng) {
     const mapDiv = document.getElementById("map");
-     google.src =
-       "https://maps.google.com/maps?q=${json.name}&t=&z=11&ie=UTF8&iwloc=&output=embed";
+    mapDiv.src =
+      "https://maps.google.com/maps?q=${json.name}&t=&z=11&ie=UTF8&iwloc=&output=embed";
     const map = new google.maps.Map(mapDiv, {
       center: { lat, lng },
       zoom: 10.5
