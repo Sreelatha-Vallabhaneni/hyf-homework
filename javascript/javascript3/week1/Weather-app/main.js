@@ -47,17 +47,14 @@ function renderWeatherDetails(json) {
     json.sys.sunset * 1000
   ).toLocaleTimeString()}`;
   //Optional a map showing where the city is located
-  /*const mapDiv = document.getElementById("map");
-  mapDiv.innerHTML = `<iframe src="https://maps.google.com/maps?q=${json.name}&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>`;*/
-  function renderLocationOnGoogleMap(lat, lng) {
+  const mapDiv = document.getElementById("map");
+  mapDiv.innerHTML = `<iframe src="https://maps.google.com/maps?q=${json.name}&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no"></iframe>`;
+  /*function renderLocationOnGoogleMap(lat, lng) {  
     const mapDiv = document.getElementById("map");
-    mapDiv.src =
-      "https://maps.google.com/maps?q=${json.name}&t=&z=11&ie=UTF8&iwloc=&output=embed";
-    const map = new google.maps.Map(mapDiv, {
+    const map = new google.maps.Map(mapDiv, {     
       center: { lat, lng },
       zoom: 10.5
     });
-
     const marker = new google.maps.Marker({
       //my time to create unique feature
       position: { lat, lng },
@@ -72,7 +69,7 @@ function renderWeatherDetails(json) {
     });
     console.log(map);
   }
-  renderLocationOnGoogleMap(json.coord.lat, json.coord.lon);
+  renderLocationOnGoogleMap(json.coord.lat, json.coord.lon);*/
   //Save my location optional - when enter city name and click button
   saveLocation(json);
 }
