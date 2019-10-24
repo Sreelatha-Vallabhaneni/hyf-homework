@@ -1,0 +1,18 @@
+[
+    {
+        "petType": "Dog",
+        "Name": "Fido",
+        "age": 14,
+        "weight": 10,
+        "breed": "pomchi",
+        "gender": "male"
+    },
+    {
+        "petType": "cat",
+        "Name": "catty",
+        "age": "5 weeks",
+        "weight": 8,
+        "breed": "mixed",
+        "gender": "female"
+    }
+]
