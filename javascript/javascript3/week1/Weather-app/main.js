@@ -48,7 +48,7 @@ function renderWeatherDetails(json) {
   ).toLocaleTimeString()}`;
   //Optional a map showing where the city is located
   const mapDiv = document.getElementById("map");
-  mapDiv.innerHTML = `<iframe src="https://maps.google.com/maps?q=${json.name}&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no"></iframe>`;
+  mapDiv.innerHTML = `<div><iframe src="https://maps.google.com/maps?q=${json.name}&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no"></iframe></div>`;
   /*function renderLocationOnGoogleMap(lat, lng) {  
     const mapDiv = document.getElementById("map");
     const map = new google.maps.Map(mapDiv, {     
