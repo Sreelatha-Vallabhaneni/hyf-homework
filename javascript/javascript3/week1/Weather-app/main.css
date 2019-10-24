@@ -38,7 +38,7 @@ nav p{
 }
 section{
     display: inline-block;   
-    margin: 20px 0px 50px 150px;
+    margin: 10px 0px 50px 150px;
     text-align: center;
     font-size: 22px;
     color:white;
@@ -51,8 +51,16 @@ section{
     width: 60%;
     margin: 10px 20px 0 30px;
     border-radius: 8px;
+    
+    
 }
+/*#map iframe{
+    width: 600px;
+    height: 400px;
+    margin: 40px 20px 0 30px;
+    border-radius: 8px;
 
+}*/
 @media (max-width: 900px) and (min-width: 100px) {
     body{
         text-align: center;                

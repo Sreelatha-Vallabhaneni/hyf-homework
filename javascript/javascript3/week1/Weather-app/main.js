@@ -47,9 +47,9 @@ function renderWeatherDetails(json) {
     json.sys.sunset * 1000
   ).toLocaleTimeString()}`;
   //Optional a map showing where the city is located
-  const mapDiv = document.getElementById("map");
-  mapDiv.innerHTML = `<div><iframe src="https://maps.google.com/maps?q=${json.name}&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no"></iframe></div>`;
-  /*function renderLocationOnGoogleMap(lat, lng) {  
+  /*const mapDiv = document.getElementById("map");
+  mapDiv.innerHTML = `<div><iframe src="https://maps.google.com/maps?q=${json.name}&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no"></iframe></div>`;*/
+  function renderLocationOnGoogleMap(lat, lng) {  
     const mapDiv = document.getElementById("map");
     const map = new google.maps.Map(mapDiv, {     
       center: { lat, lng },
@@ -69,7 +69,7 @@ function renderWeatherDetails(json) {
     });
     console.log(map);
   }
-  renderLocationOnGoogleMap(json.coord.lat, json.coord.lon);*/
+  renderLocationOnGoogleMap(json.coord.lat, json.coord.lon)
   //Save my location optional - when enter city name and click button
   saveLocation(json);
 }
