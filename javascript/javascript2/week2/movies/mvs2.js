@@ -39,15 +39,28 @@ console.log(
   countTotalMoviesWithKeywords
 );
 // 7. A word in the title is duplicated
-const duplicateWords = [];
-const splitTitles = movies
-  .map(movie => movie.title.split(' '))
-  .forEach(duplicateWord => duplicateWord
-  .filter((word, index) => duplicateWord
-  .indexOf(word) != index ? duplicateWords.push(duplicateWord) : false)   
-  );
-   console.log('7. Duplicate Words :', duplicateWords);
 
+function splitWords(title, bool_type = false){
+ if (bool_type) {
+   title = title.toLocaleLowerCase();  
+ }
+  return title.split(/[^a-z0-9]+/gi).filter(word => word.length);
+}
+function findDuplicateWords(title, bool_type = false){
+  const splitArr = splitWords(title, bool_type = false)
+  const duplicates = {};
+  splitArr.forEach(word => !duplicates[word] ? (duplicates[word] = 1) : (duplicates[word] += 1));
+  const findDuplicates = Object.entries(duplicates)
+  .map(([word, count]) => ({ word, count }))
+  .filter(obj => obj.count > 1)
+  findDuplicates.sort((a, b) => b.count - a.count);
+    if(findDuplicates.length){
+      return findDuplicates;
+    }
+}
+const moviesWithDuplicateWords = movies.filter(movie =>
+  findDuplicateWords(movie.title, true));
+console.log("7. Duplicate Words :", moviesWithDuplicateWords);
 
 
 
