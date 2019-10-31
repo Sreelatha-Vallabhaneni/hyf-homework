@@ -52,7 +52,7 @@ function showPosition(position){
     const latitude1 = position.coords.latitude;
     const longitude1 = position.coords.longitude;
     pStatus.textContent = `This is the Latitude: ${latitude1}, and  This is the Longitude: ${longitude1}`;
-    /*const  map = new google.maps.Map(document.getElementById("map"), {
+    /*const  map = new google.maps.Map(document.getElementById("#map"), {
          center: { latitude1: `${latitude1}`, longitude1: `${longitude1}` },
          zoom: 8
        });
@@ -60,13 +60,22 @@ function showPosition(position){
 }
 locationButton.addEventListener('click', getLocation);
 //6 
+function renderLocationOnGoogleMap(lat, lng) {
+  const mapDiv = document.querySelector('#map');
+  const map = new google.maps.Map(mapDiv, {
+    center: { lat, lng },
+    zoom: 12
+  });
+
+  console.log(map);
+}
 //7.Create a function called runAfterDelay. It has two parameters: delay and callback. When called the function should wait delay seconds and then call the provided callback function. Try and call this function with different delays and different callback functions.
 const runAfterDelay = (delay, callback) => setTimeout(callback, delay);
 const func1 = () => {
     console.log('7. should be logged after 4 seconds');
 }
-runAfterDelay(4000, () => {func1()});
-runAfterDelay(4800, () => {earthLogger()});
+runAfterDelay(4000, func1);
+runAfterDelay(4800, earthLogger);
 // 8. Check if we have double clicked on the page. A double click is defined by two clicks within 0.5 seconds. If a double click has been detected, log out the text: "double click!"
 const doubleClickButton = document.createElement('button');
 document.body.appendChild(doubleClickButton);
