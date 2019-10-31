@@ -1,8 +1,8 @@
 const API_KEY = "d2e4b6255bdd5b9e895549e2baf78972";
 //First call to the weather api
-const copenhagenWeatherUrl =
+/*const copenhagenWeatherUrl =
   "https://api.openweathermap.org/data/2.5/weather?q=copenhagen&appid=" +
-  API_KEY;
+  API_KEY;*/
 //Fetch weather data from a city
 
 function fetchJSON(url) {
@@ -17,7 +17,9 @@ document.querySelector("button").addEventListener("click", () => {
     "&appid=" +
     API_KEY;
   if (input) {
-    fetchJSON(ROOT_URL).then(json => renderWeatherDetails(json));
+    fetchJSON(ROOT_URL,/* for allowing map { mode: 'no-cors'}*/).then(json =>
+      renderWeatherDetails(json)
+    );
   } else if (input === "") {
     document.querySelector(".message").textContent = "Please enter city name";
   }
@@ -47,9 +49,7 @@ function renderWeatherDetails(json) {
     json.sys.sunset * 1000
   ).toLocaleTimeString()}`;
   //Optional a map showing where the city is located
-  /*const mapDiv = document.getElementById("map");
-  mapDiv.innerHTML = `<div><iframe src="https://maps.google.com/maps?q=${json.name}&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no"></iframe></div>`;*/
-  function renderLocationOnGoogleMap(lat, lng) {  
+    function renderLocationOnGoogleMap(lat, lng) {  
     const mapDiv = document.getElementById("map");
     const map = new google.maps.Map(mapDiv, {     
       center: { lat, lng },
