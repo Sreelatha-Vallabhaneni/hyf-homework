@@ -14,15 +14,11 @@ function fetchJSON(url) {
       document.querySelector(".msg2").textContent = "Please enter number";
     }
   });
-  function renderGifSearch(json) {
-    document.querySelector(".gif-container").textContent = "";
-    for (let i = 0; i < json.data.length; i++) {
-      const gifContainer = document.querySelector(".gif-container");
-      let h2 = document.createElement("h2");
-      h2.textContent = json.data[i].title;
-      gifContainer.appendChild(h2);
-      const image = document.createElement("img");
-      gifContainer.appendChild(image);
-      image.src = json.data[i].images.fixed_height.url;
-    }
-  }
+
+function renderGifSearch(json) {
+document.querySelector(".gif-container").innerHTML = json.data.map(
+item => `<img src="${item.images.fixed_height.url}"><br>`);
+}
+
+
+  
