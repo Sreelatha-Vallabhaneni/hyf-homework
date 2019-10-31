@@ -35,12 +35,13 @@ const mainClick = clickButton.addEventListener("click", () => {
   // 4. Keep a counter for how many times l and s was pressed.  
   let PressSCount = 0;
   let lCount = 0;
+  const isGameRunning = () => selectInput > 0 && timer > 0;
   const setup = document.body.addEventListener("keypress", event => {
-    if (event.keyCode === 115 && selectInput > 0 && timer > 0) {
+    if (event.keyCode === 115 && isGameRunning()) {
       //keyCode supports all browsers, which supports all but internetexploral 9.0 only
       PressSCount++;
       document.querySelector(".s-clicks").textContent = PressSCount;
-    } else if (event.keyCode === 108 && selectInput > 0 && timer > 0) {
+    } else if (event.keyCode === 108 && isGameRunning()) {
       lCount++;
       document.querySelector(".l-clicks").textContent = lCount;
     }   
@@ -48,18 +49,15 @@ const mainClick = clickButton.addEventListener("click", () => {
 // 5.
   setTimeout(() => {
        if (PressSCount > lCount) {
-         /*var confettiSettings = { target: "confetti-holder" };
+         var confettiSettings = { target: "confetti-holder" };
          var confetti = new ConfettiGenerator(confettiSettings);
-         confetti.render();*/
+         confetti.render();
         document.querySelector(".won-s").textContent =
           "Hurray! you won the game";
-          /*var confettiSettings = { target: "confetti-holder" };
-          var confetti = new ConfettiGenerator(confettiSettings);
-          confetti.render();*/
-      } else if (lCount > PressSCount) {   
-        /*var confettiSettings = { target: "my-canvas" };
+       } else if (lCount > PressSCount) {   
+        var confettiSettings = { target: "my-canvas" };
         var confetti = new ConfettiGenerator(confettiSettings);
-        confetti.render();     */
+        confetti.render();    
         document.querySelector(".won-l").textContent =
         `Hurray! you won the game`;        
       } else if (PressSCount === lCount && selectInput) {
