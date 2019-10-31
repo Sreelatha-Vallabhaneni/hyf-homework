@@ -54,13 +54,6 @@ section{
     
     
 }
-/*#map iframe{
-    width: 600px;
-    height: 400px;
-    margin: 40px 20px 0 30px;
-    border-radius: 8px;
-
-}*/
 @media (max-width: 900px) and (min-width: 100px) {
     body{
         text-align: center;                
