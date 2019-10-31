@@ -29,12 +29,12 @@ renderProducts(products);
 //Filter products
 const searchInput = document.querySelector('div.search input');
 searchInput.addEventListener("keyup", () => {
-  const searchValue = products.filter(product =>
+  const filteredProducts = products.filter(product =>
     product.name
       .toLowerCase()
       .trim()
-      .includes(searchInput.value.toLowerCase().trim())
+      .includes(searchInput.value)
   );
-  renderProducts(searchValue);
+  renderProducts(filteredProducts);
 });
 // ship to
