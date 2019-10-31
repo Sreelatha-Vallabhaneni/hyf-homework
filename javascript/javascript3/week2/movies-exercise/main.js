@@ -6,15 +6,14 @@ fetch(
   // Create an array of bad movies
   const badMovies = movies.filter(movie => movie.rating <= 3)
   console.log('1. Bad Movies: ', badMovies)
-  return badMovies;})
-//Creat an array of bad movies since year 2000
-.then( movies => {
-  const badMoviesSinceYr2k = movies.filter(movie => movie.year >= 2000 && movie.rating <= 3)
-  console.log('2. Bad Movies Since 2000: ', badMoviesSinceYr2k);
-  return badMoviesSinceYr2k;})
-//Create an array of the titles of the bad movies since year 2000     
-.then(movies => {
+  //Creat an array of bad movies since year 2000
+  const badMoviesSinceYr2k = movies.filter(
+    movie => movie.year >= 2000 && movie.rating <= 3
+  );
+  console.log("2. Bad Movies Since 2000: ", badMoviesSinceYr2k);
+  //Create an array of the titles of the bad movies since year 2000     
   const badMoviesTitles = movies.map(movie => movie.title)
   console.log('3. Bad Movies Titles Since 2000: ', badMoviesTitles);
-  return badMoviesTitles;
 })
+
+
