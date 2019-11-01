@@ -4,11 +4,8 @@ const BASE_URL =
 
 fetch(BASE_URL)
 .then(response => response.json())
-.then((json) => {
-    return new Promise(resolve => {
+.then((list) => {
         setTimeout(() => {
-            resolve(json)
-            }, 3000)
-        });
+            console.log(list);
+            }, 3000)        
     })
-.then(json => console.log(json))
