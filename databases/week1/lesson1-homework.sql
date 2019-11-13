@@ -22,15 +22,35 @@ from task where title like '%database%' or description like '%database%';
 select task.title, status.name as status
 from task inner join status on task.status_id = status.id;
 -- 9. Get the name of each status, along with a count of how many tasks have that status
-select status.name as status, count(task.id)
+/*select status.name as status, count(task.id)
 from task 
 inner join status on status.id = task.status_id
-group by status.id;
+group by status.id;*/
 -- 10. Get the names of all statuses, sorted by the status with most tasks first
-select status.name as status, count(task.id) 
+/*select status.name as status, count(task.id) 
 from task
 inner join status on status.id = task.status_id
 group by status.id
-order by task.id desc;
+order by task.id desc;*/
+
+
+
+select user.name, status.name as status, count(task.id)
+from task 
+inner join status on status.id = task.status_id
+left join user on user.id = task.user_id
+group by status.id;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
