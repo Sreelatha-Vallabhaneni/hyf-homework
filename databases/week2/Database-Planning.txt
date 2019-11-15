@@ -1,0 +1,7 @@
+Link for planning relational database
+
+https://fmhelp.filemaker.com/help/16/fmp/en/index.html#page/FMP_Help/planning-databases.html
+
+Link for database planning / database design basic
+
+https://support.office.com/en-us/article/database-design-basics-eb2159cf-1e30-401a-8084-bd4f9c9ca1f5
