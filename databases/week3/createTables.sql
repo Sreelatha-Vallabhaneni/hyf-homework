@@ -92,3 +92,5 @@ VALUES ('nice dinner', 'I like it', 1, 4, "2019-1-2");*/
 -- Get meals that has a price smaller than a specific price fx 90
 -- SELECT * FROM Meal WHERE Price < 4;
 -- Get meals that still has available reservations
+
+-- Get meals that partially match a title. Rød grød med will match the meal with the title Rød grød med fløde
