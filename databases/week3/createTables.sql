@@ -35,7 +35,11 @@ VALUES ('Pizza', 'Pizza with cheese', 'Odense', '01.09.2019', 3, '5.55', now());
 INSERT INTO Meal(title,description, location, `When`, max_reservations, price, created_date) 
 VALUES ('Soup', 'Tomato soup', 'Odense', '30.08.2019', 2, '2', '2.10.2019');
 INSERT INTO Meal(title, description, location, `When`, max_reservations, price, created_date) 
-VALUES('pizza', 'chicken pizza', 'taastrup', '11.8.2019', 4, '60', '27.11.2019');*/
+VALUES('pizza', 'chicken pizza', 'taastrup', '11.8.2019', 4, '60', '27.11.2019');
+INSERT INTO Meal(title,description, location, `When`, max_reservations, price, created_date) 
+VALUES ('Soup', 'Tomato soup', 'Odense', '30.08.2019', 42, '2', '2.10.2029');
+INSERT INTO Meal(title,description, location, `When`, max_reservations, price, created_date) 
+VALUES ('Dhum biryani and Rød grød med fløde', 'Tomato soup', 'høetaastrup', '2029-08-30', 59, '2', '2019-10-2');*/
 /*-- Get all meals
 SELECT * FROM meal;
 -- Add a new meal
@@ -92,5 +96,25 @@ VALUES ('nice dinner', 'I like it', 1, 4, "2019-1-2");*/
 -- Get meals that has a price smaller than a specific price fx 90
 -- SELECT * FROM Meal WHERE Price < 4;
 -- Get meals that still has available reservations
-
+/*SELECT meal.title, meal.max_reservations, reservation.number_of_guests FROM meal JOIN reservation ON meal.id = reservation.meal_id
+WHERE meal.max_reservations >  reservation.number_of_guests;*/
 -- Get meals that partially match a title. Rød grød med will match the meal with the title Rød grød med fløde
+-- SELECT * FROM meal WHERE title LIKE '%Rød grød med fløde%'; 
+-- Get meals that has been created between two dates
+/*SELECT * FROM meal
+WHERE created_date BETWEEN '2019-01-5' AND '2030-10-20';*/
+-- Get only specific number of meals fx return only 5 meals
+-- SELECT * FROM Meal LIMIT 5;
+-- Get the meals that have good reviews
+/*SELECT meal.title, meal.location, review.stars AS star_rating FROM meal 
+JOIN review ON meal.id = review.meal_id WHERE stars > 3;*/
+-- Get reservations for a specific meal sorted by created_date
+/*SELECT meal.title, reservation.created_date, reservation.number_of_guests
+FROM meal JOIN reservation ON meal.id = reservation.meal_id
+WHERE meal.title LIKE '%soup%'
+ORDER BY reservation.created_date;*/
+
+-- Sort all meals by average number of stars in the reviews
+SELECT meal.title, AVG(review.stars) AS stars FROM meal JOIN review ON meal.id = review.meal_id 
+GROUP BY meal.title
+ORDER BY stars DESC;
