@@ -9,7 +9,7 @@ description TEXT NOT NULL,
 location VARCHAR(255) NOT NULL,
 `when` DATETIME NOT NULL,
 max_reservations INT(10),
-price DECIMAL NOT NULL,
+price DECIMAL(13, 4) NOT NULL,
 created_date DATE NOT NULL
 );
 
@@ -33,15 +33,15 @@ FOREIGN KEY(meal_id) REFERENCES meal (id) ON DELETE CASCADE
 
 
 --  MEAL
-INSERT INTO Meal(title, description, location, `When`, max_reservations, price, created_date)
-VALUES ('Pizza', 'Pizza with cheese', 'Odense', '01.09.2019', 3, '5.55', now());
-INSERT INTO Meal(title,description, location, `When`, max_reservations, price, created_date) 
-VALUES ('Soup', 'Tomato soup', 'Odense', '30.08.2019', 2, '2', '2.10.2019');
-INSERT INTO Meal(title, description, location, `When`, max_reservations, price, created_date) 
-VALUES('pizza', 'chicken pizza', 'taastrup', '11.8.2019', 4, '60', '27.11.2019');
-INSERT INTO Meal(title,description, location, `When`, max_reservations, price, created_date) 
-VALUES ('Soup', 'Tomato soup', 'Odense', '30.08.2019', 42, '2', '2.10.2029');
-INSERT INTO Meal(title,description, location, `When`, max_reservations, price, created_date) 
+INSERT INTO meal(title, description, location, `When`, max_reservations, price, created_date)
+VALUES ('Pizza', 'Pizza with cheese', 'Odense', '2019-01-09', 3, '5.55', now());
+INSERT INTO meal(title,description, location, `When`, max_reservations, price, created_date) 
+VALUES ('Soup', 'Tomato soup', 'Odense', '2019-08-30', 2, '2', '2019-10-2');
+INSERT INTO meal(title, description, location, `When`, max_reservations, price, created_date) 
+VALUES('pizza', 'chicken pizza', 'taastrup', '2019-8-11', 4, '60', '2019-11-27');
+INSERT INTO meal(title,description, location, `When`, max_reservations, price, created_date) 
+VALUES ('Soup', 'Tomato soup', 'Odense', '2019-08-30', 42, '2', '2029-10-2');
+INSERT INTO meal(title,description, location, `When`, max_reservations, price, created_date) 
 VALUES ('Dhum biryani and Rød grød med fløde', 'Tomato soup', 'høetaastrup', '2029-08-30', 59, '2', '2019-10-2');
 
 -- Get all meals
@@ -63,10 +63,10 @@ DELETE FROM Meal WHERE id = 3;
 
 
 -- Reservation
-INSERT INTO reservation (number_of_guests, meal_id, created_date) VALUES (4, 1, "2019-11-17");
-INSERT INTO reservation (number_of_guests, meal_id, created_date) VALUES (3, 4, "2019-10-10");
-INSERT INTO reservation (number_of_guests, meal_id, created_date) VALUES (5, 3, "2019-07-30");
-INSERT INTO reservation (number_of_guests, meal_id, created_date) VALUES (2, 2, "2019-9-28");
+INSERT INTO reservation (number_of_guests, meal_id, created_date) VALUES (4, 1, '2019-11-17');
+INSERT INTO reservation (number_of_guests, meal_id, created_date) VALUES (3, 4, '2019-10-10');
+INSERT INTO reservation (number_of_guests, meal_id, created_date) VALUES (5, 3, '2019-07-30');
+INSERT INTO reservation (number_of_guests, meal_id, created_date) VALUES (2, 2, '2019-9-28');
 
 -- Get all reservations
 SELECT * FROM reservation;
@@ -126,7 +126,7 @@ SELECT * FROM meal WHERE title LIKE '%Rød grød med fløde%';
 
 -- Get meals that has been created between two dates
 SELECT * FROM meal
-WHERE created_date BETWEEN '2019-01-5' AND '2030-10-20';
+WHERE created_date < '2019-01-5' AND created_date > '2030-10-20';
 
 -- Get only specific number of meals fx return only 5 meals
 SELECT * FROM Meal LIMIT 5;
@@ -143,5 +143,5 @@ ORDER BY reservation.created_date;
 
 -- Sort all meals by average number of stars in the reviews
 SELECT meal.title, AVG(review.stars) AS stars FROM meal JOIN review ON meal.id = review.meal_id 
-GROUP BY meal.title
+GROUP BY meal.id
 ORDER BY stars DESC;
