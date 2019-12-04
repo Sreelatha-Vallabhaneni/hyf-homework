@@ -4,7 +4,7 @@
   "description": "",
   "main": "warmup.js",
   "scripts": {
-    "start": "node src/backend/index.js",
+    "start": "nodemon src/backend/index.js",
     "dev": "nodemon src/backend/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

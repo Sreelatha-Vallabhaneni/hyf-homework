@@ -14,5 +14,13 @@
     "description": "Lovely morning eating yummy danish breakfast",
     "createdAt": "2019/12/2 13:53",
     "price": 60
+  },
+  {
+    "id": 3,
+    "title": "Indian breakfast",
+    "maxNumberOfGuests": 3,
+    "description": "Lovely morning eating yummy Indian breakfast",
+    "createdAt": "2019/12/3 00:13",
+    "price": 50
   }
 ]
