@@ -25,6 +25,8 @@ app.use("/randommeal", randomMeal);
 app.use("/reservations", reservations);
 app.use("/random_reservation", randomReservation);
 
-app.listen(3000, () => console.log("server starting at port 3000"));
+//assigning port
+const port = process.env.PORT || 5000;
+app.listen(port, () => console.log(`server starting at port ${port}`));
 
 
