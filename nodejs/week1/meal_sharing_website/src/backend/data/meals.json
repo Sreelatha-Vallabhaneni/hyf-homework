@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Indian food in the summer",
+    "maxNumberOfGuests": 5,
+    "description": "A nice night out eating delicious indian food",
+    "createdAt": "2019/12/7 14:34",
+    "price": 67
+  },
+  {
+    "id": 2,
+    "title": "Danish breakfast",
+    "maxNumberOfGuests": 6,
+    "description": "Lovely morning eating yummy danish breakfast",
+    "createdAt": "2019/12/2 13:53",
+    "price": 60
+  },
+  {
+    "id": 3,
+    "title": "Indian breakfast",
+    "maxNumberOfGuests": 3,
+    "description": "Lovely morning eating yummy Indian breakfast",
+    "createdAt": "2019/12/3 00:13",
+    "price": 50
+  }
+]
