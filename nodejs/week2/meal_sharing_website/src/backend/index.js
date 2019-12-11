@@ -26,7 +26,7 @@ route.use("/reviews", reviews);
 route.use("/reservations", reservations);
 
 //assigning port
-const port =  4000;
+const port = process.env.PORT || 4000;
 route.listen(port, () => console.log(`server starting at port ${port}`));
 
 
