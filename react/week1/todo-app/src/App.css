@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.form-input{
+  background-color:  wheat;
+  border: lightcoral 2px solid; 
+  color: darkviolet;
+  width: 200px;
+  height: 40px;
+  margin: 10px;
+  padding: 0 20px;
+  font-size: 18px;
+  border-radius: 10px;
+}
+.btn{
+  height: 40px;
+  width: 80px;
+}
+.todo{
+  width: 500px;
+  color:#bf07ac;
+  background-color: rgb(247, 175, 175);
+  text-align: justify;
+  padding: 5px;
+  border-radius: 5px;
+  list-style: none;
+  margin-left: 22rem;
+}
+
+.App-link {
+  margin-top: 30px;
+  color: #bf07ac;
+  font-size: x-large;
+  font-weight: bold;
+}
