@@ -1,4 +1,5 @@
-/*import React from "react";
+import React, { useState } from 'react';
+//import React from "react";
 import DatePicker from "react-datepicker";
 const AddDate = () => {
     const [item, setItem] = useState([{startDate: new Date()}]);
@@ -8,13 +9,14 @@ const AddDate = () => {
         startDate: date
       });
     }
+    
 
-    //render() {
     return (
-      <DatePicker
+      <DatePicker className="date"
         selected={item.startDate}
-        onChange={handleChange}/>
+        dateFormat="EEE, dd MMMM yyyy"
+        onChange={handleChange}
+      />
     );
- // };
 }
-export default AddDate;*/
+export default AddDate;

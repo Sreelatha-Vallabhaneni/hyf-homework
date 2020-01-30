@@ -26,20 +26,45 @@
   height: 40px;
   width: 80px;
 }
+.btn-success{
+  width: 25%;
+  
+  border-radius: 8px;
+  height: 31px;
+}
+.faicons, .btn-success{
+  float: right;
+}
+.faicons{
+  margin: 3px 20px 0 0;
+}
 .todo{
-  width: 500px;
+  width: 650px;
   color:#bf07ac;
   background-color: rgb(247, 175, 175);
   text-align: justify;
   padding: 5px;
   border-radius: 5px;
   list-style: none;
-  margin-left: 22rem;
+  margin-left: 20rem;
 }
-
 .App-link {
   margin-top: 30px;
   color: #bf07ac;
   font-size: x-large;
   font-weight: bold;
+}
+.date{
+  border-radius: 8px;
+  border: none;
+  color: #bf07ac;
+  text-align: center;
+  margin-left: 40px;
+}
+.all-titles{
+  display: inline-flex;
+  width: 20%;
+}
+body{
+  background-color: wheat;
 }
