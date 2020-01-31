@@ -3,28 +3,6 @@ import TodoForm from "./todoForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AddDate from "./datePick";
 
-/*const Todo = ({todo, index, completeTodo, removeTodo}) => {
-  return (
-    <div style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}>
-      
-        <li className="todo">
-          <span className="all-titles">{todo.title}</span><AddDate />
-          <button className="btn-success" onClick={() => {
-              completeTodo(index);
-            }}>
-            Complete
-          </button>
-          <FontAwesomeIcon className="faicons" onClick={() => {
-              removeTodo(index);
-            }}
-            icon="trash"/>
-        </li>
-      </ul>
-    </div>
-  );
-};*/
-
-
 const AddItem = () => {
   const toDoArray = [
     {
@@ -86,5 +64,4 @@ const AddItem = () => {
   );
 }
 
-//index={index} todo={todo} completeTodo={completeTodo} removeTodo={removeTodo}
 export default AddItem;

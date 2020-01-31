@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './app.css';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import "react-datepicker/dist/react-datepicker.css";
