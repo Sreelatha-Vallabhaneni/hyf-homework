@@ -3,10 +3,10 @@ import TodoForm from "./todoForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AddDate from "./datePick";
 
-const Todo = ({todo, index, completeTodo, removeTodo}) => {
+/*const Todo = ({todo, index, completeTodo, removeTodo}) => {
   return (
     <div style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}>
-      <ul className="list m-4">
+      
         <li className="todo">
           <span className="all-titles">{todo.title}</span><AddDate />
           <button className="btn-success" onClick={() => {
@@ -22,7 +22,7 @@ const Todo = ({todo, index, completeTodo, removeTodo}) => {
       </ul>
     </div>
   );
-};
+};*/
 
 
 const AddItem = () => {
@@ -66,14 +66,25 @@ const AddItem = () => {
   }
 
   return (
-      <div className="App list-items">
-        <TodoForm addToDo={addToDo} />
-        {todos.map((todo, index) => (
-          <Todo key={index} index={index} todo={todo} completeTodo={completeTodo} removeTodo={removeTodo}/>
-        ))}
+    <div className="App list-items">
+      <TodoForm addToDo={addToDo} />
+      <div>
+        <ul className="list">
+          {todos.map((todo, index) => (
+            <li key={index} className="todo m-4" style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}>
+              <span className="all-titles">{todo.title}</span>
+              <AddDate/>
+              <button className="btn-success" onClick={() => {completeTodo(index);}}>
+                Complete
+              </button>
+              <FontAwesomeIcon className="faicons" onClick={() => {removeTodo(index);}} icon="trash"/>
+            </li>
+          ))}
+        </ul>
       </div>
+    </div>
   );
 }
 
-
+//index={index} todo={todo} completeTodo={completeTodo} removeTodo={removeTodo}
 export default AddItem;

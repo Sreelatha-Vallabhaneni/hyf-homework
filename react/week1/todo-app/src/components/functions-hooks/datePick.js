@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-//import React from "react";
+
 import DatePicker from "react-datepicker";
 const AddDate = () => {
     const [item, setItem] = useState([{startDate: new Date()}]);

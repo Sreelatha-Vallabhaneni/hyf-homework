@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const TodoForm = ({addToDo}) => { 
      
     const [task, setTask] = useState(""); 
-    const OnFormSubmit = (e) => {
+    const onFormSubmit = (e) => {
         e.preventDefault();
         if(!task) {
             return alert("Please enter task");
@@ -17,7 +17,7 @@ const TodoForm = ({addToDo}) => {
     };
     // render form
     return (      
-        <form  className="todo-form" onSubmit={OnFormSubmit}>
+        <form  className="todo-form" onSubmit={onFormSubmit}>
           <label className="form-label App-link">Add Task</label>
           <div>
             <input type="text" className="form-input" placeholder="Enter new task" value={task} onChange={handleOnChange}/>
