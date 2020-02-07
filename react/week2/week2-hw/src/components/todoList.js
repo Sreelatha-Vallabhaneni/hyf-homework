@@ -56,8 +56,7 @@ function AddTodo(){
         <button onClick={submitTodo} onChange={handleOnChange}>Add Todo</button>
         <ul>
         <RenderList/>
-        </ul>
-        
+        </ul>        
       </div>
     );
 }
