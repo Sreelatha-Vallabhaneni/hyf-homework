@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function AddTodo(){
+function Todos(){
     const [todo, setTodo] = useState([
     {
       id: 1,
@@ -21,31 +21,34 @@ function AddTodo(){
 
     const submitTodo = (e) => {
         e.preventDefault();        
-        return setTodo([...todo, {title : "Random Text", id : todo.length + 1}]);        
+        return setTodo([...todo, {id : todo[todo.length-1]?.id+1 || 1, 
+          title : "Random Text",
+          isChecked : false}]);        
     }
     
     const handleOnChange = (e) => {
         return setTodo(e.target.value)
     }
-    const toggleTodo = (index) => {
-        const newToDos = [...todo];
-        newToDos[index].isChecked = true;
-        setTodo(newToDos);
+    const toggleTodo = (id) => {
+      setTodo(prev => prev.map(todo => {
+         if (todo.id === id) {
+            todo.isChecked = !todo.isChecked;
+          }
+          return todo
+        }))
     }
-    const removeTodo = (index) =>{
-        const newToDos = [...todo];
-        newToDos.splice(index, 1);
-        setTodo(newToDos);
+    const removeTodo = (id) =>{
+      setTodo(prev=> prev.filter(todo => todo.id !== id))       
     }
-    const RenderList = () => {
+    const TodoList = () => {
         return (
             todo.length === 0 ? <p>No items....</p> :
-            todo.map((list, index) => {
+            todo.map((list) => {
             return (
-              <li key={index}>
+              <li key={list.id}>
                 <span className="all-titles" style={{ textDecoration: list.isChecked ? "line-through" : "", color: "darkred"}}>{list.title}</span>
-                <input type="checkbox" onClick={() => toggleTodo(index)} checked={list.isChecked} name ={list.title} onChange={() => handleOnChange}/>
-                <button onClick={() => removeTodo(index)}>Delete</button>
+                <input type="checkbox" onClick={() => toggleTodo(list.id)} checked={list.isChecked} name ={list.title} onChange={() => handleOnChange}/>
+                <button onClick={() => removeTodo(list.id)}>Delete</button>
               </li>
             );})
         )
@@ -55,10 +58,10 @@ function AddTodo(){
       <div>
         <button onClick={submitTodo} onChange={handleOnChange}>Add Todo</button>
         <ul>
-        <RenderList/>
+        <TodoList/>
         </ul>        
       </div>
     );
 }
 
-export default AddTodo;
+export default Todos;

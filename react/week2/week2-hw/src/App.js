@@ -2,14 +2,14 @@ import React from 'react';
 import './App.css';
 import TodoHeader from "./components/todoHeader";
 import Timer from "./components/timer";
-import AddTodo from "./components/todoList";
+import Todos from "./components/todoList";
 
 function App() {
   return (
     <div className="App">
       <TodoHeader/>
       <Timer/>
-      <AddTodo/>
+      <Todos/>
     </div>
   );
 }
