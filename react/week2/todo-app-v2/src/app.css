@@ -1,0 +1,58 @@
+.App {
+  text-align: center;
+  color: rgb(211, 0, 0);
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;  
+}
+.form-input{
+  background-color:  wheat;
+  border: lightcoral 2px solid; 
+  color: rgb(211, 0, 0);
+  width: 200px;
+  height: 40px;
+  margin: 10px;
+  padding: 0 20px;
+  font-size: 18px;
+  border-radius: 10px;
+}
+.todo{  
+  display: flex;
+  flex-wrap: wrap;
+  flex: 2 2;
+  justify-content: space-between;
+  align-items: center;
+  color:#bf07ac;
+  background-color: rgb(247, 175, 175);  
+  border-radius: 5px;
+  list-style: none;
+  padding: 2%;
+}
+.App-link {
+  margin-top: 30px;
+  color: #bf07ac;
+  font-size: x-large;
+  font-weight: bold;
+}
+.date{
+  border-radius: 8px;
+  border: none;
+  color: #bf07ac;
+  text-align: center;
+}
+.all-titles{
+  display: inline-flex;
+  width: 20%;
+}
+.list{
+  display: inline-block;
+}
+body{
+  background-color: wheat;
+}
