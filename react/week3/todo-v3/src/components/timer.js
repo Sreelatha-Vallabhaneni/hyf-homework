@@ -8,7 +8,7 @@ function Timer(){
             setCount(prevCount => prevCount + 1)
         }, 1000)
         return clearTimeout(count);
-    })
+    }, [count])
 
 return <p> You have used {count} seconds</p>;
 }

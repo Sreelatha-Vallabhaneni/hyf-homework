@@ -18,12 +18,7 @@ function TodoForm({addTodo}){
     const handleChange = date => {
       setDate(date);
     };
-
-    /*const inputRef = React.createRef();
-    useEffect(() => {
-      inputRef.current.focus()
-    });*/
-   // console.log(inputRef);
+    
     return(
         <form  className="todo-form" onSubmit={onFormSubmit}>
             <label>Todo Description :{" "}
