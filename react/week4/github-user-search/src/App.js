@@ -27,5 +27,5 @@ function App() {
     </div>
   );
 }
-//<RenderFunc render={(repoFetch)=>(<MyRepos repoFetch={repoFetch}/>)}/>
+
 export default App;

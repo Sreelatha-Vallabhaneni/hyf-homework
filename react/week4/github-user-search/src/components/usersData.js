@@ -36,10 +36,8 @@ function UsersData(){
                 return (
                   <a href={newList.html_url} target="_">
                     <li key={list.id}>{newList.login}</li>
-                  </a>
-                );
-              })
-            }
+                  </a>);
+              })}
         </ul>
         }
       </div>
