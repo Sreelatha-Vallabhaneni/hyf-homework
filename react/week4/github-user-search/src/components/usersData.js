@@ -1,15 +1,14 @@
 import React, { useEffect, useContext } from 'react';
-import { stateContext } from '../App';
+import {stateContext}  from '../App';
 import Loading from './loading';
+import UserList from './userList';
 
 function UsersData(){
-    const {user, setUser, input, error, setError, loading, setLoading} = useContext(stateContext);
-    useEffect(() => {
-        const ROOT_URL = `https://api.github.com/search/users?q=${input}`;
-        
+    const {user, setUser, input, setError, loading, setLoading} = useContext(stateContext);
+    useEffect(() => {        
       ;(async () => {
         try{
-        const response = await fetch(`${ROOT_URL}`);
+        const response = await fetch(`https://api.github.com/search/users?q=${input}`);
         const result = await response.json();
         const newResult = result;
         setUser(newResult);
@@ -19,27 +18,13 @@ function UsersData(){
             console.log(error);
           }
       })();
-    }, [input, setUser,error, setError, user.message, setLoading]);    
+    }, [input, setUser, setError, user.message, setLoading]);    
     
-   console.log(error);
+   console.log(user);
    
     return (
       <div className="list">
-        {loading ? <Loading />
-        :
-        <ul>
-            {user.total_count === undefined ? 
-              <p>No items</p>
-            : 
-              user.items.map(list => {
-                const newList = list;
-                return (
-                  <a href={newList.html_url} target="_">
-                    <li key={list.id}>{newList.login}</li>
-                  </a>);
-              })}
-        </ul>
-        }
+        {loading ? <Loading /> : <UserList/>}
       </div>
     );
 }
