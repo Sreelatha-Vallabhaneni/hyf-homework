@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.my-repos{  
+  color: navy;
+  text-align: justify;
+  background-color: rgb(245, 184, 243);
+  width: 100%;
+  padding: 5%;
+}
+.list li{
+  list-style: none;
+  text-align: center;
+  position: relative;
+}
+
+

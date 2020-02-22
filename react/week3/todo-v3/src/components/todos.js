@@ -67,6 +67,7 @@ function Todos(){
         }
       }, [cbRef]);
 
+console.log("render");
     return (
       <React.Fragment>
         <TodoForm addTodo={addTodo} />
@@ -104,6 +105,10 @@ function Todos(){
       </React.Fragment>
     );
 }
- export default Todos;
+
+function areEqual(prevProps, nextProps){
+  return prevProps.title === nextProps.title && prevProps.completed ===nextProps.completed;
+}
+ export default React.memo(Todos, areEqual);
 
  
