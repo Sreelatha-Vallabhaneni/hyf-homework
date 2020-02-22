@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "numberOfStars": 4,
+    "title": "Best meal ever",
+    "mealId": 1,
+    "createdBy": "Benjamin hughes",
+    "createdAt": 12345
+  },
+  {
+    "id": 2,
+    "numberOfStars": 3,
+    "title": "Best meal",
+    "mealId": 2,
+    "createdBy": "Sreelatha",
+    "createdAt": 54321
+  }
+]
