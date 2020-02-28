@@ -17,8 +17,9 @@ export default function Main () {
             setLoadingState(true);
             ;(async () => {
                 try {
-                    //const result = await getPrivateContent();
-                    setContent(<Shifts/>);
+                   // const result = await getPrivateContent();
+                    //setContent(result.body);
+                    await setContent(<Shifts/>);
                 } catch (err) {
                     if (typeof err === "string") {
                         setContent(err);

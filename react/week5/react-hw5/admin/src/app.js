@@ -2,14 +2,16 @@ const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 const app = express();
-const cors = require('cors')
-const port = 5000
+const cors = require('cors');
+const port = 5000;
+
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(cors())
 
 const admin = require("./admin.js")
+
 
 app.post('/auth', async (req, res) => {
   var token;
@@ -30,5 +32,4 @@ app.post('/auth', async (req, res) => {
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-
 
