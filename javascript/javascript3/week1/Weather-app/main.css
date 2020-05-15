@@ -12,7 +12,7 @@ input, button{
     background-color: mediumslateblue;
     
     border: none;
-    border-radius: 10px;
+    border-radius: 16px;
     text-align: center;
     height: 30px;
     margin-right: 8px ;
@@ -45,7 +45,7 @@ section{
      width: 20%;
      background: rgba(0, 0, 0, 0.5);  
 }
-#map {
+#map{
     float: right;
     height: 70%;
     width: 60%;

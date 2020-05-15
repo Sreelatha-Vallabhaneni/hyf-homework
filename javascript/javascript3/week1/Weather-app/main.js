@@ -1,4 +1,4 @@
-const API_KEY = "d2e4b6255bdd5b9e895549e2baf78972";
+const API_KEY = "83c8eb465eeda9a497ff8013c1364722";
 //First call to the weather api
 /*const copenhagenWeatherUrl =
   "https://api.openweathermap.org/data/2.5/weather?q=copenhagen&appid=" +
@@ -49,27 +49,30 @@ function renderWeatherDetails(json) {
     json.sys.sunset * 1000
   ).toLocaleTimeString()}`;
   //Optional a map showing where the city is located
-  function renderLocationOnGoogleMap(lat, lng) {  
+  function renderLocationOnGoogleMap() {  
     const mapDiv = document.getElementById("map");
-    const map = new google.maps.Map(mapDiv, {     
-      center: { lat, lng },
-      zoom: 10.5
-    });
-    const marker = new google.maps.Marker({
-      //my time to create unique feature
-      position: { lat, lng },
-      map: map,
-      // zoom: 10,
-      label: {
-        color: "darkblue",
-        fontWeight: "bold",
-        fontSize: "24px",
-        text: `${Math.round(json.main.temp - 273.15) + "°C"}`
-      }
-    });
-    console.log(map);
+    mapDiv.innerHTML = `<div class="mapouter"><div class="gmap_canvas"><iframe width="650" height="450" id="gmap_canvas" src="https://maps.google.com/maps?q=${json.name}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>`;
+    // const mapDiv = document.getElementById("map");
+    // const map = new google.maps.Map(mapDiv, {     
+    //   center: { lat, lng },
+    //   zoom: 11
+    // });
+    // const marker = new google.maps.Marker({
+    //   //my time to create unique feature
+    //   position: { lat, lng },
+    //   map: map,
+    //   // zoom: 10,
+    //   label: {
+    //     color: "darkblue",
+    //     fontWeight: "bold",
+    //     fontSize: "24px",
+    //     text: `${Math.round(json.main.temp - 273.15) + "°C"}`
+    //   }
+    // });
+    // console.log(map);
   }
-  renderLocationOnGoogleMap(json.coord.lat, json.coord.lon)
+  renderLocationOnGoogleMap()
+  // json.coord.lat, json.coord.lon
   //Save my location optional - when enter city name and click button
   saveLocation(json);
 }
@@ -95,9 +98,9 @@ document.querySelector(".btn2").addEventListener("click", () => {
       .then(response => response.json())
       .then(json => renderWeatherDetails(json))
       //Save my location optional - when click the current position button
-      .then(json => {
-        localStorage.setItem("City", json.main.name);
-        localStorage.setItem("Country", json.sys.country);
+      .then(data => {
+        localStorage.setItem("City", data.name);
+        localStorage.setItem("Country", data.sys.country);
         //location.reload();
       });
   });
